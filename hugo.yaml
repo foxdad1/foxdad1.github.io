@@ -1,0 +1,74 @@
+baseURL: "https://foxdad1.github.io/"
+title: "foxdad1的博客"
+paginate: 5
+theme: PaperMod
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+
+# --- 核心汉化设置 ---
+languageCode: "zh-cn"
+hasCJKLanguage: true  # 必须开启，确保中文搜索和字数统计正常
+enableRobotsTXT: true
+
+params:
+  env: production
+  title: "foxdad1的博客"
+  description: "欢迎来到我的个人博客"
+  author: "foxdad1"
+  DateFormat: "2006年01月02日"
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  # 文章页功能汉化
+  ShowReadingTime: true
+  ShowWordCount: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+
+  # --- 修复左上角头像显示 ---
+  label:
+    text: "首页"
+    icon: "/img/avatar.png"  # 加上开头的斜杠，指向 static/img/avatar.png
+    iconHeight: 35
+
+  # --- 首页欢迎语 (作者同款模式) ---
+  homeInfoParams:
+    Title: "Hi there is foxdad1 👋"
+    Content: "欢迎来到我的博客，这里记录我的学习与生活。"
+
+  # --- 社交图标 ---
+  socialIcons:
+    - name: github
+      url: "https://github.com/foxdad1"
+
+  # --- 搜索配置 (配合 content/search.md) ---
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10
+    keys: ["title", "permalink", "summary", "content"]
+
+
+# --- 汉化顶部导航栏 ---
+menu:
+  main:
+    - identifier: posts
+      name: "文章"
+      url: /posts/
+      weight: 10
+    - identifier: archives
+      name: "归档"
+      url: /archives/
+      weight: 20
+    - identifier: search
+      name: "搜索"
+      url: /search/
+      weight: 30
